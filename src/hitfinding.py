@@ -240,7 +240,7 @@ def photon_count():
 
     # READ THE GAINMAP FILE
     gain_fileID = mpirw.createH5(dir_raw_data + 'cxidb-%s.cxi' %(runnr),'r')
-    gain = mpirw.read_ds(gain_fileID, 'data')
+    gain = mpirw.read_ds(gain_fileID, 'entry_1/data_analysis/gainmap')
     gainmap = gain
 
 
@@ -484,14 +484,14 @@ def baglivo_score():
 def main():
     """If one of the steps as already been made and there is no need to re-run them, just comment them out"""
     #dark_mode()
-    common_mode()
+    #common_mode()
     #gain()
+    photon_count()
+    lambda_values()
+    poissmask()
     #photon_count()
     #lambda_values()
-    #poissmask()
-    #photon_count()
-    #lambda_values()
-    #baglivo_score()
+    baglivo_score()
 
 if __name__ == '__main__':
     mpirw = mpi_h5rw()
