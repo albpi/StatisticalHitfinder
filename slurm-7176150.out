@@ -1,0 +1,128 @@
+srun: cluster configuration lacks support for cpu binding
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              a017
+  Registerable memory:     32768 MiB
+  Total memory:            65503 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+An MPI process has executed an operation involving a call to the
+"fork()" system call to create a child process.  Open MPI is currently
+operating in a condition that could result in memory corruption or
+other system errors; your MPI job may hang, crash, or produce silent
+data corruption.  The use of fork() (or system() or other calls that
+create child processes) is strongly discouraged.  
+
+The process that invoked fork was:
+
+  Local host:          a017 (PID 714)
+  MPI_COMM_WORLD rank: 18
+
+If you are *absolutely sure* that your application will successfully
+and correctly survive a call to fork(), you may disable this warning
+by setting the mpi_warn_on_fork MCA parameter to 0.
+--------------------------------------------------------------------------
+[1,14]<stdout>:JOB NAME cxidb-78
+[1,10]<stdout>:JOB NAME cxidb-78
+[1,15]<stdout>:JOB NAME cxidb-78
+[1,11]<stdout>:JOB NAME cxidb-78
+[1,16]<stdout>:JOB NAME cxidb-78
+[1,12]<stdout>:JOB NAME cxidb-78
+[1,17]<stdout>:JOB NAME cxidb-78
+[1,13]<stdout>:JOB NAME cxidb-78
+[1,18]<stdout>:JOB NAME cxidb-78
+[1,8]<stdout>:JOB NAME cxidb-78
+[1,19]<stdout>:JOB NAME cxidb-78
+[1,9]<stdout>:JOB NAME cxidb-78
+[1,20]<stdout>:JOB NAME cxidb-78
+[1,7]<stdout>:JOB NAME cxidb-78
+[1,4]<stdout>:JOB NAME cxidb-78
+[1,1]<stdout>:JOB NAME cxidb-78
+[1,3]<stdout>:JOB NAME cxidb-78
+[1,6]<stdout>:JOB NAME cxidb-78
+[1,0]<stdout>:JOB NAME cxidb-78
+[1,2]<stdout>:JOB NAME cxidb-78
+[1,5]<stdout>:JOB NAME cxidb-78
+[1,3]<stdout>:RANK -  3
+[1,1]<stdout>:RANK -  1
+[1,20]<stdout>:RANK -  20
+[1,16]<stdout>:RANK -  16
+[1,2]<stdout>:RANK -  2
+[1,19]<stdout>:RANK -  19
+[1,7]<stdout>:RANK -  7
+[1,14]<stdout>:RANK -  14
+[1,10]<stdout>:RANK -  10
+[1,6]<stdout>:RANK -  6
+[1,18]<stdout>:RANK -  18
+[1,15]<stdout>:RANK -  15
+[1,11]<stdout>:RANK -  11
+[1,5]<stdout>:RANK -  5
+[1,0]<stdout>:RANK -  0
+[1,13]<stdout>:RANK -  13
+[1,8]<stdout>:RANK -  8
+[1,12]<stdout>:RANK -  12
+[1,17]<stdout>:RANK -  17
+[1,4]<stdout>:RANK -  4
+[1,9]<stdout>:RANK -  9
+[1,13]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,17]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,7]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,19]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,10]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,8]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,18]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,20]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,9]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,15]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,12]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,14]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,11]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,16]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,2]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,5]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,1]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,6]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,4]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,3]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,0]<stdout>:FILEID <HDF5 file "cxidb-78.cxi" (mode r)>
+[1,18]<stdout>:File Created -  18
+[1,15]<stdout>:File Created -  15
+[1,16]<stdout>:File Created -  16
+[1,19]<stdout>:File Created -  19
+[1,17]<stdout>:File Created -  17
+[1,20]<stdout>:File Created -  20
+[1,14]<stdout>:File Created -  14
+[1,13]<stdout>:File Created -  13
+[1,9]<stdout>:File Created -  9
+[1,12]<stdout>:File Created -  12
+[1,11]<stdout>:File Created -  11
+[1,10]<stdout>:File Created -  10
+[1,8]<stdout>:File Created -  8
+[1,7]<stdout>:File Created -  7
+[1,2]<stdout>:File Created -  2
+[1,3]<stdout>:File Created -  3
+[1,1]<stdout>:File Created -  1
+[1,4]<stdout>:File Created -  4
+[1,6]<stdout>:File Created -  6
+[1,5]<stdout>:File Created -  5
+[a003:09287] 20 more processes have sent help message help-mpi-btl-openib.txt / reg mem limit low
+[a003:09287] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[a003:09287] 20 more processes have sent help message help-mpi-runtime.txt / mpi_init:warn-fork
+[1,0]<stdout>:File Created -  0
+[1,0]<stdout>:Writing done! Elapsed time: 3528.13418818 seconds.

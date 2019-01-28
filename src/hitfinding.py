@@ -486,11 +486,11 @@ def main():
     #dark_mode()
     #common_mode()
     #gain()
-    photon_count()
-    lambda_values()
-    poissmask()
     #photon_count()
     #lambda_values()
+    #poissmask()
+    photon_count()
+    lambda_values()
     baglivo_score()
 
 if __name__ == '__main__':

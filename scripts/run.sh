@@ -6,9 +6,9 @@
 #   
 #
 ##SBATCH --exclusive --nodes=2
-#SBATCH --nodes=4
+#SBATCH --nodes=3
 # Ask for 2 tasks(processes)
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=7
 ##SBATCH --ntasks=48
 #
 #
@@ -18,7 +18,7 @@
 #
 # The partition to use.
 
-##SBATCH -p regular --mem-per-cpu=4000M
+##SBATCH -p regular --mem-per-cpu=2000M
 
 # 'A' partition
 #SBATCH -p regular -x a015 -C GTX680 --mem-per-cpu=3000M

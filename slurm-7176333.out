@@ -1,0 +1,474 @@
+srun: cluster configuration lacks support for cpu binding
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              a002
+  Registerable memory:     32768 MiB
+  Total memory:            65503 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+An MPI process has executed an operation involving a call to the
+"fork()" system call to create a child process.  Open MPI is currently
+operating in a condition that could result in memory corruption or
+other system errors; your MPI job may hang, crash, or produce silent
+data corruption.  The use of fork() (or system() or other calls that
+create child processes) is strongly discouraged.  
+
+The process that invoked fork was:
+
+  Local host:          a006 (PID 8027)
+  MPI_COMM_WORLD rank: 15
+
+If you are *absolutely sure* that your application will successfully
+and correctly survive a call to fork(), you may disable this warning
+by setting the mpi_warn_on_fork MCA parameter to 0.
+--------------------------------------------------------------------------
+[1,0]<stdout>:JOB NAME cxidb-78
+[1,1]<stdout>:JOB NAME cxidb-78
+[1,2]<stdout>:JOB NAME cxidb-78
+[1,3]<stdout>:JOB NAME cxidb-78
+[1,4]<stdout>:JOB NAME cxidb-78
+[1,5]<stdout>:JOB NAME cxidb-78
+[1,6]<stdout>:JOB NAME cxidb-78
+[1,13]<stdout>:JOB NAME cxidb-78
+[1,9]<stdout>:JOB NAME cxidb-78
+[1,10]<stdout>:JOB NAME cxidb-78
+[1,12]<stdout>:JOB NAME cxidb-78
+[1,18]<stdout>:JOB NAME cxidb-78
+[1,16]<stdout>:JOB NAME cxidb-78
+[1,17]<stdout>:JOB NAME cxidb-78
+[1,14]<stdout>:JOB NAME cxidb-78
+[1,15]<stdout>:JOB NAME cxidb-78
+[1,19]<stdout>:JOB NAME cxidb-78
+[1,20]<stdout>:JOB NAME cxidb-78
+[1,8]<stdout>:JOB NAME cxidb-78
+[1,7]<stdout>:JOB NAME cxidb-78
+[1,11]<stdout>:JOB NAME cxidb-78
+[a002:22665] 20 more processes have sent help message help-mpi-btl-openib.txt / reg mem limit low
+[a002:22665] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[a002:22665] 20 more processes have sent help message help-mpi-runtime.txt / mpi_init:warn-fork
+[1,1]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,1]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,2]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,2]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,4]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,4]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,6]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,6]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,3]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,3]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,5]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,5]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,0]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,0]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,15]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,15]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,9]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,9]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,20]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,20]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,18]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,18]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,19]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,19]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,13]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,13]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,16]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,16]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,17]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,17]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,14]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,14]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,10]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,10]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,8]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,8]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,11]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,11]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,7]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,7]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,12]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:306: RankWarning: Polyfit may be poorly conditioned
+[1,12]<stderr>:  p3 = np.polyfit(gmdn,phcn,3)
+[1,3]<stdout>:File saved - rank nr. 3
+[1,16]<stdout>:File saved - rank nr. 16
+[1,6]<stdout>:File saved - rank nr. 6
+[1,2]<stdout>:File saved - rank nr. 2
+[1,4]<stdout>:File saved - rank nr. 4
+[1,15]<stdout>:File saved - rank nr. 15
+[1,19]<stdout>:File saved - rank nr. 19
+[1,20]<stdout>:File saved - rank nr. 20
+[1,12]<stdout>:File saved - rank nr. 12
+[1,7]<stdout>:File saved - rank nr. 7
+[1,14]<stdout>:File saved - rank nr. 14
+[1,11]<stdout>:File saved - rank nr. 11
+[1,9]<stdout>:File saved - rank nr. 9
+[1,10]<stdout>:File saved - rank nr. 10
+[1,1]<stdout>:File saved - rank nr. 1
+[1,18]<stdout>:File saved - rank nr. 18
+[1,17]<stdout>:File saved - rank nr. 17
+[1,8]<stdout>:File saved - rank nr. 8
+[1,13]<stdout>:File saved - rank nr. 13
+[1,5]<stdout>:File saved - rank nr. 5
+[1,0]<stdout>:File saved - rank nr. 0
+[1,6]<stdout>:File saved - rank nr. 6
+[1,0]<stdout>:File saved - rank nr. 0
+[1,4]<stdout>:File saved - rank nr. 4
+[1,2]<stdout>:File saved - rank nr. 2
+[1,19]<stdout>:File saved - rank nr. 19
+[1,8]<stdout>:File saved - rank nr. 8
+[1,20]<stdout>:File saved - rank nr. 20
+[1,7]<stdout>:File saved - rank nr. 7
+[1,12]<stdout>:File saved - rank nr. 12
+[1,10]<stdout>:File saved - rank nr. 10
+[1,3]<stdout>:File saved - rank nr. 3
+[1,18]<stdout>:File saved - rank nr. 18
+[1,14]<stdout>:File saved - rank nr. 14
+[1,16]<stdout>:File saved - rank nr. 16
+[1,15]<stdout>:File saved - rank nr. 15
+[1,13]<stdout>:File saved - rank nr. 13
+[1,9]<stdout>:File saved - rank nr. 9
+[1,1]<stdout>:File saved - rank nr. 1
+[1,11]<stdout>:File saved - rank nr. 11
+[1,17]<stdout>:File saved - rank nr. 17
+[1,5]<stdout>:File saved - rank nr. 5
+[1,4]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,10]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,8]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,2]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,4]<stdout>:shape (40000, 370, 388)
+[1,5]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,5]<stdout>:shape (40000, 370, 388)
+[1,3]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,3]<stdout>:shape (40000, 370, 388)
+[1,1]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,1]<stdout>:shape (40000, 370, 388)
+[1,2]<stdout>:shape (40000, 370, 388)
+[1,0]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,0]<stdout>:shape (40000, 370, 388)
+[1,6]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,6]<stdout>:shape (40000, 370, 388)
+[1,16]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,10]<stdout>:shape (40000, 370, 388)
+[1,17]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,8]<stdout>:shape (40000, 370, 388)
+[1,20]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,12]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,19]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,7]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,15]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,7]<stdout>:shape (40000, 370, 388)
+[1,18]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,11]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,17]<stdout>:shape (40000, 370, 388)
+[1,9]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,9]<stdout>:shape (40000, 370, 388)
+[1,19]<stdout>:shape (40000, 370, 388)
+[1,12]<stdout>:shape (40000, 370, 388)
+[1,15]<stdout>:shape (40000, 370, 388)
+[1,13]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,13]<stdout>:shape (40000, 370, 388)
+[1,14]<stdout>:ID file <HDF5 file "photon_space_frames_column.h5" (mode r)>
+[1,14]<stdout>:shape (40000, 370, 388)
+[1,11]<stdout>:shape (40000, 370, 388)
+[1,16]<stdout>:shape (40000, 370, 388)
+[1,18]<stdout>:shape (40000, 370, 388)
+[1,20]<stdout>:shape (40000, 370, 388)
+[1,6]<stdout>:Lambdas read
+[1,10]<stdout>:Lambdas read
+[1,14]<stdout>:Lambdas read
+[1,0]<stdout>:Lambdas read
+[1,3]<stdout>:Lambdas read
+[1,16]<stdout>:Lambdas read
+[1,15]<stdout>:Lambdas read
+[1,12]<stdout>:Lambdas read
+[1,20]<stdout>:Lambdas read
+[1,18]<stdout>:Lambdas read
+[1,19]<stdout>:Lambdas read
+[1,1]<stdout>:Lambdas read
+[1,2]<stdout>:Lambdas read
+[1,5]<stdout>:Lambdas read
+[1,7]<stdout>:Lambdas read
+[1,17]<stdout>:Lambdas read
+[1,11]<stdout>:Lambdas read
+[1,13]<stdout>:Lambdas read
+[1,9]<stdout>:Lambdas read
+[1,4]<stdout>:Lambdas read
+[1,8]<stdout>:Lambdas read
+[1,0]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,0]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,0]<stdout>:Chunks'dimension 0 17 6596
+[1,16]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,16]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,16]<stdout>:Chunks'dimension 272 289 6596
+[1,6]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,6]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,6]<stdout>:Chunks'dimension 102 119 6596
+[1,5]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,19]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,5]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,5]<stdout>:Chunks'dimension 85 102 6596
+[1,11]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,11]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,13]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,10]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,10]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,19]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,19]<stdout>:Chunks'dimension 323 340 6596
+[1,11]<stdout>:Chunks'dimension 187 204 6596
+[1,10]<stdout>:Chunks'dimension 170 187 6596
+[1,4]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,12]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,4]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,4]<stdout>:Chunks'dimension 68 85 6596
+[1,15]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,20]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,20]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,12]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,12]<stdout>:Chunks'dimension 204 221 6596
+[1,13]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,13]<stdout>:Chunks'dimension 221 238 6596
+[1,20]<stdout>:Chunks'dimension 340 370 11640
+[1,3]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,8]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,8]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,8]<stdout>:Chunks'dimension 136 153 6596
+[1,14]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,14]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,14]<stdout>:Chunks'dimension 238 255 6596
+[1,1]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,1]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,2]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,2]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,2]<stdout>:Chunks'dimension 34 51 6596
+[1,9]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,9]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,9]<stdout>:Chunks'dimension 153 170 6596
+[1,1]<stdout>:Chunks'dimension 17 34 6596
+[1,7]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,7]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,7]<stdout>:Chunks'dimension 119 136 6596
+[1,17]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,17]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,17]<stdout>:Chunks'dimension 289 306 6596
+[1,18]<stdout>:mask_ID <HDF5 file "poisson_mask.h5" (mode r+)>
+[1,18]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,18]<stdout>:Chunks'dimension 306 323 6596
+[1,15]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,15]<stdout>:Chunks'dimension 255 272 6596
+[1,3]<stdout>:data2mask <HDF5 dataset "data": shape (370, 388), type "<i2"> (370, 388)
+[1,3]<stdout>:Chunks'dimension 51 68 6596
+[1,6]<stdout>:Photon done 6
+[1,20]<stdout>:Photon done 20
+[1,1]<stdout>:Photon done 1
+[1,3]<stdout>:Photon done 3
+[1,5]<stdout>:Photon done 5
+[1,19]<stdout>:Photon done 19
+[1,2]<stdout>:Photon done 2
+[1,4]<stdout>:Photon done 4
+[1,18]<stdout>:Photon done 18
+[1,15]<stdout>:Photon done 15
+[1,17]<stdout>:Photon done 17
+[1,16]<stdout>:Photon done 16
+[1,0]<stdout>:Photon done 0
+[1,13]<stdout>:Photon done 13
+[1,14]<stdout>:Photon done 14
+[1,9]<stdout>:Photon done 9
+[1,10]<stdout>:Photon done 10
+[1,8]<stdout>:Photon done 8
+[1,11]<stdout>:Photon done 11
+[1,12]<stdout>:Photon done 12
+[1,7]<stdout>:Photon done 7
+[1,6]<stdout>:Lambdas 6
+[1,20]<stdout>:Lambdas 20
+[1,17]<stdout>:Lambdas 17
+[1,3]<stdout>:Lambdas 3
+[1,4]<stdout>:Lambdas 4
+[1,1]<stdout>:Lambdas 1
+[1,5]<stdout>:Lambdas 5
+[1,2]<stdout>:Lambdas 2
+[1,18]<stdout>:Lambdas 18
+[1,19]<stdout>:Lambdas 19
+[1,15]<stdout>:Lambdas 15
+[1,13]<stdout>:Lambdas 13
+[1,16]<stdout>:Lambdas 16
+[1,12]<stdout>:Lambdas 12
+[1,10]<stdout>:Lambdas 10
+[1,8]<stdout>:Lambdas 8
+[1,11]<stdout>:Lambdas 11
+[1,9]<stdout>:Lambdas 9
+[1,7]<stdout>:Lambdas 7
+[1,0]<stdout>:Lambdas 0
+[1,14]<stdout>:Lambdas 14
+[1,6]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,6]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,20]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,20]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,13]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,13]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,1]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,1]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,15]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,15]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,19]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,19]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,3]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,3]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,16]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,16]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,17]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,17]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,18]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,18]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,4]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,4]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,14]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,14]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,2]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,2]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,5]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,5]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,0]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,0]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,12]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,12]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,11]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,11]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,9]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,9]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,8]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,8]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,10]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,10]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,7]<stderr>:/home/alberto/Statisticalhitfinder/src/hitfinding.py:418: RuntimeWarning: invalid value encountered in divide
+[1,7]<stderr>:  value = np.dot(y1,y2)/(np.sqrt(np.dot(y1,y1))*np.sqrt(np.dot(y2,y2)))
+[1,3]<stdout>:Mask found!
+[1,6]<stdout>:Mask found!
+[1,5]<stdout>:Mask found!
+[1,2]<stdout>:Mask found!
+[1,0]<stdout>:Mask found!
+[1,4]<stdout>:Mask found!
+[1,1]<stdout>:Mask found!
+[1,17]<stdout>:Mask found!
+[1,13]<stdout>:Mask found!
+[1,19]<stdout>:Mask found!
+[1,10]<stdout>:Mask found!
+[1,15]<stdout>:Mask found!
+[1,9]<stdout>:Mask found!
+[1,16]<stdout>:Mask found!
+[1,7]<stdout>:Mask found!
+[1,20]<stdout>:Mask found!
+[1,11]<stdout>:Mask found!
+[1,14]<stdout>:Mask found!
+[1,8]<stdout>:Mask found!
+[1,18]<stdout>:Mask found!
+[1,12]<stdout>:Mask found!
+[1,5]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,5]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,5]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,5]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,4]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,4]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,4]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,4]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,1]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,1]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,1]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,1]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,3]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,3]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,3]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,3]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,2]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,2]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,2]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,2]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,6]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,6]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,6]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,6]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,0]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,0]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,20]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,20]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,15]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,15]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,18]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,18]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,19]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,19]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,16]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,16]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,17]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,17]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,14]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,14]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,18]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,18]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,19]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,19]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,20]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,20]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,15]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,15]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,16]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,16]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,17]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,17]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,9]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,9]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,10]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,10]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,14]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,14]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,10]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,10]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,9]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,9]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,7]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,7]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,7]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,7]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,8]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,8]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,8]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,8]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,13]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,13]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,11]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,11]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,0]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,0]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,13]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,13]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,11]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,11]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,12]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: divide by zero encountered in log
+[1,12]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,12]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in multiply
+[1,12]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,18]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in log
+[1,18]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,13]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in log
+[1,13]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,9]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in log
+[1,9]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,8]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in log
+[1,8]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,3]<stderr>:/home/alberto/Statisticalhitfinder/src/utils/functions2.py:91: RuntimeWarning: invalid value encountered in log
+[1,3]<stderr>:  part_sum = lista*(np.log(lista)-np.log(nlambda)-np.log(N))
+[1,0]<stdout>:Writing done! Elapsed time: 3773.93219304 seconds.
