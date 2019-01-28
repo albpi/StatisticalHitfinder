@@ -283,24 +283,6 @@ def photon_count():
     mpirw.ds_flush(photon_space_frames_fileID)
     comm.barrier()
 
-    """
-    # FITTING GMD VALUES TO PHOTON COUNT
-    mean_ph_bkg = np.mean(ph_count_per_frame[start:end])
-    std_ph_bkg = np.std(ph_count_per_frame[start:end])
-    thr_ph = mean_ph_bkg - 2.0*std_ph_bkg
-    upp_thr_ph = mean_ph_bkg + 2.0*std_ph_bkg
-
-    # create background with "possible" misses
-    fake_bkg = (ph_count_per_frame[start:end] > 400) & (ph_count_per_frame[start:end] > thr_ph) & (ph_count_per_frame[start:end] < upp_thr_ph) & (gmd_sample[start:end] > 1)
-    index_bkg[start:end] = fake_bkg.astype(int)
-
-    # create index without the very low values
-    index_low_rm = (ph_count_per_frame[start:end] > 400) & (ph_count_per_frame[start:end] > thr_ph) & (ph_count_per_frame[start:end] < upp_thr_ph) & (gmd_sample[start:end] > 1)
-    index_up_down[start:end] = index_low_rm.astype(int)
-    ph_sum_over_frames_worker[rank] = np.sum(ph_space_ds[start:end][index_low_rm],0)
-    mpirw.ds_flush(photon_space_frames_fileID)
-    comm.barrier()
-    """
     prel_ms = prel_misses(ph_count_per_frame[start:end],gmd_bkg[start:end],mask)
     comm.barrier()
     fake_bkg = prel_ms
