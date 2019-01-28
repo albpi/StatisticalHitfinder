@@ -12,6 +12,7 @@ from utils.functions1 import Functions
 from scipy.stats import mode
 from utils.parallelH5 import mpi_h5rw
 from utils.functions2 import find_1ph_peak, baglivo
+from utils.misses import prel_misses
 import time
 import ConfigParser
 
@@ -282,6 +283,7 @@ def photon_count():
     mpirw.ds_flush(photon_space_frames_fileID)
     comm.barrier()
 
+    """
     # FITTING GMD VALUES TO PHOTON COUNT
     mean_ph_bkg = np.mean(ph_count_per_frame[start:end])
     std_ph_bkg = np.std(ph_count_per_frame[start:end])
@@ -298,7 +300,16 @@ def photon_count():
     ph_sum_over_frames_worker[rank] = np.sum(ph_space_ds[start:end][index_low_rm],0)
     mpirw.ds_flush(photon_space_frames_fileID)
     comm.barrier()
+    """
+    prel_ms = prel_misses(ph_count_per_frame[start:end],gmd_bkg[start:end],mask)
+    comm.barrier()
+    fake_bkg = prel_ms
 
+    index_bkg[start:end] = fake_bkg.astype(int)
+    index_up_down[start:end] = fake_bkg.astype(int)
+    ph_sum_over_frames_worker[rank] = np.sum(ph_space_ds[start:end][fake_bkg],0)
+    mpirw.ds_flush(photon_space_frames_fileID)
+    comm.barrier()
 
     phcn = ph_count_per_frame[:][index_up_down[:].astype(bool)]
     gmdn = gmd_bkg[index_up_down[:].astype(bool)]
@@ -482,13 +493,13 @@ def baglivo_score():
 
 
 def main():
-    """If one of the steps as already been made and there is no need to re-run them, just comment them out"""
+    """If one of the steps has already been made and there is no need to re-run it, just comment it out"""
     #dark_mode()
     #common_mode()
     #gain()
-    #photon_count()
-    #lambda_values()
-    #poissmask()
+    photon_count()
+    lambda_values()
+    poissmask()
     photon_count()
     lambda_values()
     baglivo_score()
@@ -505,7 +516,7 @@ if __name__ == '__main__':
     # BACK DETECTOR
     #dir_darkrun = '/scratch/fhgfs/LCLS/cxi/%s/hdf5/' %(nameExp)
     dir_raw_data = '/scratch/fhgfs/alberto/'
-    wdir = '/scratch/fhgfs/alberto/test/'
+    wdir = '/scratch/fhgfs/alberto/testPROVA/'
 
     if rank==0:
         if not os.path.isdir(wdir):
