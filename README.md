@@ -17,9 +17,4 @@ in the CXIDB - Coherent Imaging Data Bank (http://www.cxidb.org/browse.html).
 In the "ipynb" folder, a Juppyter notebbok -- normalization.ipynb -- should clarify the reader how to perform the normalization of the log-likelihood scores obtained thanks the "hitfinder.py" script.
 
 The files contained in the folder "files" have been obtained with another version of this script.
-For a matter of simplicity and readability, those have been given in the cxidb-78.cxi and are used by the script "hitfinder.py"
-without the need of reprocessing them.
-
-In order to use the script, few dependencies are needed:
-    - mpi4py (to run it in parallel);
-    - h5py (built against HDF5 Prallel -- http://docs.h5py.org/en/stable/mpi.html)
+For a matter of simplicity and readability, those have been given in the cxidb-78.cxi and are used by the script "hitfinder.py" without the need of reprocessing them.
